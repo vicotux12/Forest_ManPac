@@ -78,6 +78,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -156,6 +157,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
@@ -557,6 +570,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      04 PauseMenu-Alfa-_10: 6228841628803781152
+      04 PauseMenu-Alfa-_11: -2482770534237397042
+      04 PauseMenu-Alfa-_12: -6574065685191761401
+      04 PauseMenu-Alfa-_13: -4003475218819446037
+      04 PauseMenu-Alfa-_14: -2750164239187643336
+      04 PauseMenu-Alfa-_15: -8768963784365019478
+      04 PauseMenu-Alfa-_16: -3584444008947933033
+      04 PauseMenu-Alfa-_17: 1757667252265134423
+      04 PauseMenu-Alfa-_3: -6042178313929089556
+      04 PauseMenu-Alfa-_4: 5860137542081468904
+      04 PauseMenu-Alfa-_5: -5829034723068260193
+      04 PauseMenu-Alfa-_6: -6097957730455396060
+      04 PauseMenu-Alfa-_7: 7889910716292386848
+      04 PauseMenu-Alfa-_8: -2089635120947796011
+      04 PauseMenu-Alfa-_9: -5858963539113733827
+      04 PauseMenu-Buttv: -7257337559398688649
+      04 PauseMenu-Fondo: -29851616905363836
+      04 PauseMenu-Pause: 6968951994167996218
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

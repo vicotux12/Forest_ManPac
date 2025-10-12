@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -281,6 +282,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      05 GameUI-Coin: -7705338513348542588
+      05 GameUI-Healf: -2205694505701663580
+      05 GameUI-Heart: 1405939959029204522
+      05 GameUI-Nube: -8539976961739144794
+      05 GameUI-PIcolav: -4906632745020651163
+      05 GameUI-Ratav: -454512168345316948
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

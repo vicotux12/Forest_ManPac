@@ -57,6 +57,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -135,6 +136,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
@@ -389,6 +402,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      03 Pause Menu_0: 5957762457941626769
+      03 Pause Menu_1: 6896180638681309085
+      03 Pause Menu_10: -4709654172520696766
+      03 Pause Menu_2: 6954911625506016474
+      03 Pause Menu_3: -5248063024579355111
+      03 Pause Menu_4: -7971844414969162606
+      03 Pause Menu_5: -5397174539322406350
+      03 Pause Menu_7: 7874691358033066541
+      03 Pause Menu_8: -8127669249227824909
+      03 Pause Menu_9: 516922235065700986
+      03 Pause Menu_Return: 1002617966232470491
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

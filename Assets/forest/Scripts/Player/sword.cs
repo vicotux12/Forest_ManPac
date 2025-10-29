@@ -11,6 +11,7 @@ public class sword : MonoBehaviour{
     private void OnTriggerEnter(Collider other) {
         if (other.tag == TagEspada){
             rend.enabled = true;
+            Espada.SetActive(true);
             Destroy(colectable);
             }
             

@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour{
     [SerializeField]  string Tag_Seguir="player";
 
     public static int HighScore;
-    public string NexLevel;
+    public string NexLevel,Main_Menu;
     public GameState currentGameState;
     [SerializeField]private int Life,Healt, Colectables;
     [SerializeField]float volMusic, volSFX;
@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour{
         //Time.timeScale = 0;     
         
 	   SceneManager.LoadScene (SceneToLoad);
-       if(SceneToLoad=="MainMenu"){
+       if(SceneToLoad==Main_Menu){
            if(HighScore<=Points){
             HighScore=Points;
             Debug.Log("gameOver");
@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour{
     }
     public void DeadMain() {
         ResetGame();
-         SceneManager.LoadScene ("MainMenu");
+         SceneManager.LoadScene (Main_Menu);
 
     }
     public void UpdateSound() {
@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour{
     }
     void livesCount(){
         if(lives==0){
-            GameOver("MainMenu");
+            GameOver(Main_Menu);
            
         }        
     }

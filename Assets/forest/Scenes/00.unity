@@ -21747,6 +21747,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TPS_controller_2
       objectReference: {fileID: 0}
+    - target: {fileID: 3384578889069314541, guid: 49a422580e85d494cb58491c74389fba, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cd338537718675c4abf26ac824fb3b2c, type: 2}
+    - target: {fileID: 3384578889230412467, guid: 49a422580e85d494cb58491c74389fba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49a422580e85d494cb58491c74389fba, type: 3}
 --- !u!1001 &2542796553187405580
@@ -22804,7 +22812,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasPausa: {fileID: 3055962596527898298}
-  gamanager: {fileID: 1183528882}
 --- !u!223 &3055962596527898298
 Canvas:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 #region Previas
-using UnityEngine; 
+using UnityEngine;
 using System.Collections; 
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 #if UNITY_EDITOR
@@ -9,47 +10,41 @@ using UnityEditor;
 #endregion
 public class CanvasPause : MonoBehaviour {
     public Canvas canvasPausa;
-	[SerializeField] GameManager gamanager;
 
-
-	private void Awake() {
-	gamanager = FindObjectOfType<GameManager>();
-
-	}
-
-		#region Unity
 	void Start(){
-	canvasPausa.enabled = false;
-	Time.timeScale = 1;
-	gamanager = FindObjectOfType<GameManager>();
+		canvasPausa.enabled = false;
+		Time.timeScale = 1;
 	}
-	public void Pause(){
-		
-		canvasPausa.enabled = !canvasPausa.enabled;
-        Time.timeScale = Time.timeScale == 0 ? 1: 0;
-		}
-
 	void Update(){
-
 		if (Input.GetButtonDown ("Cancel")){
 			Pause();
-			}
-		if (gamanager == null) {
-			
-            gamanager = FindObjectOfType<GameManager>();
-            print("buscando Game manager");
-		}	
+			}	
 	}
+	public void Pause(){		
+		canvasPausa.enabled = !canvasPausa.enabled;
+		Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+		Cursor.visible = !Cursor.visible;
+	}
+
+	
 	public void CursorTrue(){
 		Cursor.visible = true; 
 	}
-	public void CursorFalse(){
-		Cursor.visible = false; 
-	}
-	public void DeadGame(){
-		gamanager. DeadMain();	
-
+	public void CursorFalse()
+	{
+		Cursor.visible = false;
 	}
 
-	#endregion
+	public void Quit()
+	{
+#if UNITY_EDITOR
+		EditorApplication.isPlaying = false;
+#else
+		Application.Quit();
+#endif
+	}
+	
+	public void scene(string name){ 
+	SceneManager.LoadScene (name);
+	}
 }

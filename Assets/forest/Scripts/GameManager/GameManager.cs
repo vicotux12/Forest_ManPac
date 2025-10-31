@@ -28,7 +28,8 @@ public class GameManager : MonoBehaviour{
     [SerializeField]  string Tag_Seguir="player";
 
     public static int HighScore;
-    public string NexLevel,Main_Menu;
+    //public string NexLevel;
+    public string Main_Menu;
     public GameState currentGameState;
     [SerializeField]private int Life,Healt, Colectables;
     [SerializeField]float volMusic, volSFX;
@@ -60,32 +61,29 @@ public class GameManager : MonoBehaviour{
         UpdateSound();        
     }
 
-#endregion
+    #endregion
 
-#region metodos extras
+    #region metodos extras
 
-  public void StartGame(){
-        currentGameState=GameState.inGame;
+    public void StartGame(){
+        currentGameState = GameState.inGame;
         Time.timeScale = 1;
+    }
+    public void StartGame_over(){
+        currentGameState = GameState.inGame;
+        Time.timeScale = 1;
+        ResetGame();
+        SceneManager.LoadScene (Main_Menu);
     }
     public void PauseGame(){
         currentGameState=GameState.pause;
         Time.timeScale = 0;
     }
     public void GameOver(string SceneToLoad){
-        currentGameState=GameState.gameOver;
-        //Time.timeScale = 0;     
-        
-	   SceneManager.LoadScene (SceneToLoad);
-       if(SceneToLoad==Main_Menu){
-           if(HighScore<=Points){
-            HighScore=Points;
-            Debug.Log("gameOver");
-        }
-           ResetGame();
+        SceneManager.LoadScene(SceneToLoad);
+        //currentGameState=GameState.gameOver;
+        //ResetGame();
        }
-        
-	}
     public void HealtScore(){
      if (Hearts >= 300){
          Hearts=100;

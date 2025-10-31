@@ -9,7 +9,13 @@ using UnityEditor;
 #endif
 #endregion
 public class CanvasPause : MonoBehaviour {
-    public Canvas canvasPausa;
+	public Canvas canvasPausa;
+	public string MainMenu = "mainMenu";
+	GameManager gamanager;
+
+	void Awake(){
+    gamanager = FindObjectOfType<GameManager>();
+    }
 
 	void Start(){
 		canvasPausa.enabled = false;
@@ -43,8 +49,13 @@ public class CanvasPause : MonoBehaviour {
 		Application.Quit();
 #endif
 	}
-	
-	public void scene(string name){ 
-	SceneManager.LoadScene (name);
+
+	public void scene(string name)
+	{
+		SceneManager.LoadScene(name);
+	}
+	public void Main_Menu_scene(){
+		gamanager.ResetGame();
+	SceneManager.LoadScene (MainMenu);
 	}
 }

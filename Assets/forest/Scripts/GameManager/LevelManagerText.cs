@@ -12,7 +12,7 @@ public class LevelManagerText: MonoBehaviour{
     bool GameStart;
     
 #region Funtion Unity
-    void awake(){
+    void Awake(){
         if (gamanager==null){
              gamanager = FindObjectOfType<GameManager>();
              }
@@ -24,9 +24,6 @@ public class LevelManagerText: MonoBehaviour{
           ganastes.text="el juego esta pausado";  
       }
 
-    }
-    void Start(){
-        gamanager = FindObjectOfType<GameManager>();
     }
 #endregion
 
@@ -47,14 +44,16 @@ public void NextBola(){
     public void StartOtro(){
         if (GameManager.Coins==0 && GameStart== true){
             if(NextLevel!=MainMenu){
-                ganastes.text="Siguiente Nivel";
+                ganastes.text = "Siguiente Nivel";
+                GameStart=false;
+                Invoke ("ganaste" ,waitTime); 
             }
             
             if(NextLevel==MainMenu){
-                ganastes.text="Juego terminado";
+                ganastes.text = "Juego terminado";
+                gamanager.StartGame_over();
             }
-            GameStart=false;
-            Invoke ("ganaste" ,waitTime);       
+                  
         }if(GameManager.Coins!=0){
             GameStart=true;
             gamanager.StartGame();

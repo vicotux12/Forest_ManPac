@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ChangeEnemy : MonoBehaviour{
+  #region 
     [SerializeField] string TagPlayer="Jugador";
     [SerializeField] Collider capsuleCollider;
     [SerializeField]Color Verde, Rojo;    
@@ -12,7 +13,7 @@ public class ChangeEnemy : MonoBehaviour{
     [SerializeField]int _Sound;
     [SerializeField] AudioClip _EnemyChange;
     [SerializeField]Text TextCargar;
-    
+    #endregion
     GameManager GameManager;
     SoundFXManagerv FXManager;
 

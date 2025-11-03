@@ -320,7 +320,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0.5.9.02
+  m_Text: 0.5.9.1.0
 --- !u!222 &263463707
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1939,6 +1939,10 @@ PrefabInstance:
     - target: {fileID: 2406235481373979661, guid: b6cb9e6e86b150641a22cbd49c3857df, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2406235481462630564, guid: b6cb9e6e86b150641a22cbd49c3857df, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2406235481462630565, guid: b6cb9e6e86b150641a22cbd49c3857df, type: 3}
       propertyPath: m_AnchorMax.y

@@ -12,8 +12,10 @@ public class Character_Controller : MonoBehaviour
     float MoveDirection=0;
     Animator anim;
 
+    public Rigidbody Rigidbody { get => rigidbody; set => rigidbody = value; }
+
     private void Start(){
-        rigidbody=GetComponent<Rigidbody>();
+        Rigidbody=GetComponent<Rigidbody>();
         anim=gameObject.GetComponent<Animator>();
         Cursor.visible = true; 
        }
@@ -25,7 +27,7 @@ public class Character_Controller : MonoBehaviour
     } 
 
         void Movement(float Horizontal){
-        rigidbody.velocity=new Vector2(Horizontal*MaxSpeed, rigidbody.velocity.y);
+        Rigidbody.velocity=new Vector2(Horizontal*MaxSpeed, Rigidbody.velocity.y);
        flip(Horizontal);
        anim.SetFloat("Speed",Mathf.Abs(Horizontal));
        //anim.SetFloat("Speed",Horizontal);

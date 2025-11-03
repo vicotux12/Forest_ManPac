@@ -8,7 +8,7 @@ public class ChangeEnemy : MonoBehaviour{
     [SerializeField] string TagPlayer="Jugador";
     [SerializeField] Collider capsuleCollider;
     [SerializeField]Color Verde, Rojo;    
-    [SerializeField] Renderer renderer;    
+    [SerializeField] private Renderer renderer;    
     [SerializeField] float waitTime;
     [SerializeField]int _Sound;
     [SerializeField] AudioClip _EnemyChange;
@@ -17,12 +17,14 @@ public class ChangeEnemy : MonoBehaviour{
     GameManager GameManager;
     SoundFXManagerv FXManager;
 
+    public Renderer Renderer { get => renderer; set => renderer = value; }
+
     void OnTriggerEnter(Collider other){
 		if (other.tag == TagPlayer){
         FXManager.SoundPlay(_EnemyChange,_Sound);        
         GameManager.IsCoin=true;
         capsuleCollider.isTrigger=false;
-        renderer.material.color=Rojo;
+        Renderer.material.color=Rojo;
         StartCoroutine(VidaEnemy());
         }
     }  
@@ -37,7 +39,7 @@ public class ChangeEnemy : MonoBehaviour{
     }
      void Awake(){
         SearchManagers();
-        renderer.material.color=Verde;
+        Renderer.material.color=Verde;
 
         }    
       IEnumerator VidaEnemy(){
@@ -47,7 +49,7 @@ public class ChangeEnemy : MonoBehaviour{
       GameManager.IsCoin=false;
       capsuleCollider.enabled=false;
       Debug.Log("tiempo acabado");
-      renderer.enabled = false;   
+      Renderer.enabled = false;   
 
       }
 

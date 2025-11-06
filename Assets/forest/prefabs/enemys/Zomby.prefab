@@ -844,7 +844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2511005931013955297
 Transform:
   m_ObjectHideFlags: 0
@@ -1664,7 +1664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2546149171106226399
 Transform:
   m_ObjectHideFlags: 0
@@ -2239,6 +2239,7 @@ MonoBehaviour:
   _Dead: {fileID: 8300000, guid: bb3b3bf21d0420e49be32fd7fe54be67, type: 3}
   RB: {fileID: 8501751211727508905}
   _Sound: 2
+  waitTime: 1.5
 --- !u!1 &7116771555543795567
 GameObject:
   m_ObjectHideFlags: 0

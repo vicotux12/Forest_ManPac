@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy_new: MonoBehaviour{
+  #region 
     [SerializeField] string TagPlayer="Jugador";
     [SerializeField][Range(1,100)] int Value=1;
     [SerializeField]bool IsCoin;
@@ -15,10 +16,11 @@ public class Enemy_new: MonoBehaviour{
     [SerializeField] AudioClip _Dead;
     [SerializeField] Rigidbody RB;
     [SerializeField]int _Sound;
-
+#endregion
 
     GameManager GameManager;
-    SoundFXManagerv FXManager;
+  SoundFXManagerv FXManager;
+    [SerializeField] float waitTime;
 
     void Update(){
       if(GameManager.IsCoin==true){
@@ -44,8 +46,9 @@ public class Enemy_new: MonoBehaviour{
     
     void OnTriggerEnter(Collider other){
 		if (other.tag == TagPlayer&&IsCoin==false){
-            FXManager.SoundPlay(_Coin, _Sound);
-            GameManager.Hearts-=100;
+      FXManager.SoundPlay(_Coin, _Sound);
+            //GameManager.Hearts-=100;
+             StartCoroutine(VidaEnemy());
             GameManager.Points-=(Value/2);
 	   }
       if (IsCoin==true && other.tag == TagPlayer){
@@ -56,18 +59,24 @@ public class Enemy_new: MonoBehaviour{
        if(other.tag == "espada"){
          Is_dead();
         }       
-  } 
-   private void Is_dead() {
-            IsCoin=false;
-        IsDead=true;
-        FXManager.SoundPlay(_Dead, _Sound);
-        GameManager.Points+=Value;
-		ScriptIA.isDead();
-        ColiderEnemy.isTrigger = false;
-        ColiderEnemy.radius=0.1f;
-        ColiderEnemy.height=0.1f;
-		ScriptIA.enabled=false;
-         RB.useGravity = true;     
-         Value=0;
-        }
+  }
+  private void Is_dead()
+  {
+    IsCoin = false;
+    IsDead = true;
+    FXManager.SoundPlay(_Dead, _Sound);
+    GameManager.Points += Value;
+    ScriptIA.isDead();
+    ColiderEnemy.isTrigger = false;
+    ColiderEnemy.radius = 0.1f;
+    ColiderEnemy.height = 0.1f;
+    ScriptIA.enabled = false;
+    RB.useGravity = true;
+    Value = 0;
+  }
+        
+        IEnumerator VidaEnemy(){
+      yield return new WaitForSeconds(waitTime);
+      GameManager.Hearts-=100;
+      }
 }

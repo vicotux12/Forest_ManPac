@@ -5,168 +5,178 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 #endregion
 #region GameStates
-public enum GameState{
+public enum GameState
+{
     inGame, pause, gameOver
 }
 #endregion
 
-public class GameManager : MonoBehaviour{
-    
-#region Asignaciones previas
-    public static GameManager gameManager;
-    public static GameManager GM_Lives;
-    public static float _Musicvol,_SFXvol;
-    public static int lives=10,Points=0, Coins=0,Hearts=100;
-    public float Musicvol,SFXvol;
-    [SerializeField] SoundFXManagerv FXManager;
+public class GameManager : MonoBehaviour
+{
 
-    [SerializeField] GameObject Player, Player1,Player2;
+    #region Statics
+    public static GameManager gameManager;
+    public GameState currentGameState;
+    public static float _Musicvol, _SFXvol;
+    public static int lives = 10, Points = 0, Coins = 0, Hearts = 100;
+    #endregion
+    #region 
+    [SerializeField] GameObject Player;
     [SerializeField] Vector3 position;
     public float espera_Reespawn;
-    [SerializeField] GameObject NewPlayer,OldPlayer;
-    //int prefabPlayer=0;
-    [SerializeField]  string Tag_Seguir="player";
-
-    public static int HighScore;
-    //public string NexLevel;
+    [SerializeField] string Tag_Seguir = "player";
     public string Main_Menu;
-    public GameState currentGameState;
-    [SerializeField]private int Life,Healt, Colectables;
-    [SerializeField]float volMusic, volSFX;
-
-    [Header ("Sound Efects")]    
+    
+    [SerializeField] private int Life, Healt, Colectables;
+    [SerializeField] float volMusic, volSFX;
+    #endregion
+    #region Sound
+    public float Musicvol, SFXvol;
+    [SerializeField] SoundFXManagerv FXManager;
+    [Header("Sound Efects")]
     public AudioClip Dead;
     public AudioClip Danger;
-    
-
-    private bool _IsCoin=false;
-    public bool IsCoin{
-        get=>_IsCoin;
-        set=>_IsCoin=value;
-        }
-    
-     
-#endregion
-#region Metodos Unity
-    void Awake() {
-         Singleton();
-         SearchManagers();
+    private bool _IsCoin = false;
+    #endregion
+    public bool IsCoin
+    {
+        get => _IsCoin;
+        set => _IsCoin = value;
     }
-    void Update(){
+
+    #region Metodos Unity
+    void Awake()
+    {
+        Singleton();
+        SearchManagers();
+    }
+    void Update()
+    {
         livesCount();
         UpdateInts();
         HeartsCount();
         HealtScore();
         SearchManagers();
-        UpdateSound();        
+        UpdateSound();
     }
 
     #endregion
 
     #region metodos extras
 
-    public void StartGame(){
+    public void StartGame()
+    {
         currentGameState = GameState.inGame;
         Time.timeScale = 1;
     }
-    public void StartGame_over(){
+    public void StartGame_over()
+    {
         currentGameState = GameState.inGame;
         Time.timeScale = 1;
         ResetGame();
-        SceneManager.LoadScene (Main_Menu);
+        SceneManager.LoadScene(Main_Menu);
     }
-    public void PauseGame(){
-        currentGameState=GameState.pause;
+    public void PauseGame()
+    {
+        currentGameState = GameState.pause;
         Time.timeScale = 0;
     }
-    public void GameOver(string SceneToLoad){
+    public void GameOver(string SceneToLoad)
+    {
         SceneManager.LoadScene(SceneToLoad);
-        //currentGameState=GameState.gameOver;
-        //ResetGame();
-       }
-    public void HealtScore(){
-     if (Hearts >= 300){
-         Hearts=100;
-        lives++;        
+    }
+    public void HealtScore()
+    {
+        if (Hearts >= 300)
+        {
+            Hearts = 100;
+            lives++;
         }
     }
-    public void DeadMain() {
+    public void DeadMain()
+    {
         ResetGame();
-         SceneManager.LoadScene (Main_Menu);
+        SceneManager.LoadScene(Main_Menu);
 
     }
-    public void UpdateSound() {
-        _Musicvol=Musicvol;        
-        _SFXvol=SFXvol;
-        
-         }
+    public void UpdateSound()
+    {
+        _Musicvol = Musicvol;
+        _SFXvol = SFXvol;
 
+    }
 
-    public void ResetGame(){
-        lives=8;
-        Hearts=100;
-        Points=0;
-        Coins=0;     
+    public void ResetGame()
+    {
+        lives = 8;
+        Hearts = 100;
+        Points = 0;
+        Coins = 0;
         Time.timeScale =
-        Time.timeScale == 0 ? 1: 0;
+        Time.timeScale == 0 ? 1 : 0;
     }
-    public void NextLive(){    
+    public void NextLive()
+    {
         Time.timeScale = 1;
-         Player.transform.position=position;
-         Player.SetActive(true);  
+        Player.transform.position = position;
+        Player.SetActive(true);
     }
-    void livesCount(){
-        if(lives==0){
+    void livesCount()
+    {
+        if (lives == 0)
+        {
             GameOver(Main_Menu);
-           
-        }        
+
+        }
     }
-    void HeartsCount(){
-        if(Hearts<=0){
-			Debug.Log("has muerto");
-            FXManager.SoundPlay(Dead, 3);
-            Player.SetActive(false);            
+    void HeartsCount()
+    {
+        if (Hearts <= 0)
+        {
+            Debug.Log("has muerto");
+            FXManager.SoundPlay(Dead, 1);
+            Player.SetActive(false);
             lives--;
-            Hearts=100;           
-           Time.timeScale = 0;
+            Hearts = 100;
+            Time.timeScale = 0;
             Invoke("NextLive", espera_Reespawn);
         }
     }
-    void UpdateInts(){
-        Life=lives;
-        Healt=Hearts;        
-        Colectables=Coins;
-    }
-    public void PlayerChoise(int value) {
-        if(value==1){
-            Instantiate(Player1,position,Quaternion.identity);
-        }
-        if (value==2){
-            Instantiate(Player2,position,Quaternion.identity);
-    }
+    void UpdateInts()
+    {
+        Life = lives;
+        Healt = Hearts;
+        Colectables = Coins;
     }
 
-    void SearchManagers() {
-        
-        if(FXManager==null){
-        FXManager=FindObjectOfType<SoundFXManagerv>();
+    void SearchManagers()
+    {
+
+        if (FXManager == null)
+        {
+            FXManager = FindObjectOfType<SoundFXManagerv>();
         }
-        if (Player == null){
+        if (Player == null)
+        {
             Player = GameObject.FindWithTag(Tag_Seguir);
-    }
         }
-#endregion
-
-#region singleton
-        
-    void Singleton(){
-        if (gameManager!=null){
-    Destroy(this);      
-    }else{ 
-        gameManager=this;
-    DontDestroyOnLoad(this);
     }
+    #endregion
+
+    #region singleton
+
+    void Singleton()
+    {
+        if (gameManager != null)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            gameManager = this;
+            DontDestroyOnLoad(this);
+        }
+    }
+    #endregion
 }
-#endregion    
-}    
 

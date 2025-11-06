@@ -64,6 +64,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2237192397330276374, guid: 2b41926946797484cb040093d88c181c, type: 3}
+      propertyPath: Sound
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237192397330276374, guid: 2b41926946797484cb040093d88c181c, type: 3}
       propertyPath: _Coin
       value: 
       objectReference: {fileID: 8300000, guid: 1a2302c2680746849923e0821ddcb45e, type: 3}

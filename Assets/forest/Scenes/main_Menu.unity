@@ -1554,6 +1554,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6997635773486934, guid: 12afabf51e0f74d4bb207e99e61d15cd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997635773486934, guid: 12afabf51e0f74d4bb207e99e61d15cd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997635773486934, guid: 12afabf51e0f74d4bb207e99e61d15cd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997635773486934, guid: 12afabf51e0f74d4bb207e99e61d15cd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 971719255976472503, guid: 12afabf51e0f74d4bb207e99e61d15cd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1564,6 +1580,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 971719255976472503, guid: 12afabf51e0f74d4bb207e99e61d15cd, type: 3}
       propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465018549926538034, guid: 12afabf51e0f74d4bb207e99e61d15cd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465018549926538034, guid: 12afabf51e0f74d4bb207e99e61d15cd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465018549926538034, guid: 12afabf51e0f74d4bb207e99e61d15cd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465018549926538034, guid: 12afabf51e0f74d4bb207e99e61d15cd, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2867080518165116994, guid: 12afabf51e0f74d4bb207e99e61d15cd, type: 3}

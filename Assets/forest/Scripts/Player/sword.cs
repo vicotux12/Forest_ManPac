@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class sword : MonoBehaviour{
 
@@ -11,7 +12,7 @@ public class sword : MonoBehaviour{
     [SerializeField] float waitTime;
     [SerializeField]int _Sound;
     [SerializeField] AudioClip _EnemyChange;
-    [SerializeField]Text TextCargar;
+    [SerializeField]TextMeshProUGUI Texto1,Texto2;
 
     [SerializeField] GameObject colectable;
     Collider ColectableCollider, EspadaCollider;
@@ -39,9 +40,11 @@ void Awake(){
       }
              
     IEnumerator VidaEnemy(){
-        TextCargar.text="Tu turno de atacar!";
+      Texto1.text = "Si";
+      Texto2.text="Si";
       yield return new WaitForSeconds(waitTime);
-      TextCargar.text="";
+      Texto1.text = "No";
+      Texto2.text = "No";
       Debug.Log("tiempo acabado");
       EspadaCollider.enabled = false;
       EspadaRenderer.enabled = false;

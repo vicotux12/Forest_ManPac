@@ -30,7 +30,7 @@ public class LevelManagerUI: MonoBehaviour{
         //highScore=GameManager.HighScore;
         Lives.text=Life.ToString();
         Points.text= Score.ToString();
-        HeartText.text=Heart.ToString();
+        //HeartText.text=Heart.ToString();
         //HighScore.text=highScore.ToString();
         LifeCoint();
     }

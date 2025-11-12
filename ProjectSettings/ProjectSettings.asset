@@ -159,7 +159,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.VicotuxGames.ManPac2_0.5.9.0
-    Standalone: com.Vicotux-Games.ManPac2--0.5.9.1-
+    Standalone: com.Vicotux-Games.ManPac2--0.5.9.3.2-
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -384,6 +384,9 @@ PlayerSettings:
     m_Automatic: 0
   - m_BuildTarget: WebGLSupport
     m_APIs: 0b000000
+    m_Automatic: 0
+  - m_BuildTarget: LinuxStandaloneSupport
+    m_APIs: 1500000011000000
     m_Automatic: 0
   m_BuildTargetVRSettings: []
   m_DefaultShaderChunkSizeInMB: 16

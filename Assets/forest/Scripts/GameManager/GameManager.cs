@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     [Header("Sound Efects")]
     public AudioClip Dead;
     public AudioClip Danger;
-    private bool _IsCoin = false;
+    [SerializeField]private bool _IsCoin = false;
     #endregion
     public bool IsCoin
     {

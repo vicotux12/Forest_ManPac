@@ -8,7 +8,7 @@ public class ChangeEnemy : MonoBehaviour{
     [SerializeField] string TagPlayer="Jugador";
     [SerializeField] Collider capsuleCollider;
     [SerializeField]Color Verde, Rojo;    
-    [SerializeField] private Renderer renderer;    
+    public Renderer Renderer;    
     [SerializeField] float waitTime;
     [SerializeField]int _Sound;
     [SerializeField] AudioClip _EnemyChange;
@@ -17,7 +17,7 @@ public class ChangeEnemy : MonoBehaviour{
     GameManager GameManager;
     SoundFXManagerv FXManager;
 
-    public Renderer Renderer { get => renderer; set => renderer = value; }
+    
 
     void OnTriggerEnter(Collider other){
 		if (other.tag == TagPlayer){

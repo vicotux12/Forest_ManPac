@@ -8,11 +8,11 @@ public class C_Controller : MonoBehaviour{
     
     [Header ("Movement")]
     [SerializeField]float Speed;
-    [SerializeField]string Horizontal,Vertical;
-    
-    
-    private  CharacterController _controller;
-    private Vector3 moveDirection = Vector3.zero;
+    [SerializeField]string Horizontal,Vertical,Button_Attake="Fire1";
+
+
+    private CharacterController _controller;
+    GameManager gameManager;
     private float Axis_Horizontal, Axis_Vertical;    
     private Vector3 _move;    
     private Animator _anim;
@@ -20,14 +20,17 @@ public class C_Controller : MonoBehaviour{
 
     private void Start() {
         _anim=gameObject.GetComponent<Animator>();
-        _controller=GetComponent<CharacterController>();
+        _controller = GetComponent<CharacterController>();
+        gameManager=FindObjectOfType<GameManager>();
     }
     void Update(){
         Axis_Horizontal=Input.GetAxis(Horizontal);
         Axis_Vertical=Input.GetAxis(Vertical);
-        Attake=Input.GetButton("Fire1");
+        Attake = Input.GetButton(Button_Attake);
+        
         _move=new Vector3(Axis_Vertical,0,Axis_Horizontal);
         Cursor.visible = CursorIsvisble;
+
         Atake();
         Rotate(_move);
         Movement(_move);       
@@ -50,7 +53,7 @@ public class C_Controller : MonoBehaviour{
     
     } 
     private void Atake() {
-        if (Attake==true){             
+        if (Attake==true && gameManager.IsCoin==true){             
         _anim.SetBool("Ataque",true);
         }else{             
         _anim.SetBool("Ataque",false);

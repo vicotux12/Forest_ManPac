@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class Enemy_new: MonoBehaviour{
   #region 
-    [SerializeField] string TagPlayer="Jugador";
+    [SerializeField] string TagPlayer="Jugador",tagEspada="espada";
     [SerializeField][Range(1,100)] int Value=1;
     [SerializeField]bool IsCoin;
-    [SerializeField] GameObject Orco;
     [SerializeField]Animator anim;
     public EnemyGrunt_ia  ScriptIA;
-    [SerializeField]bool IsDead;
+    bool IsDead=false;
     [SerializeField] CapsuleCollider ColiderEnemy;
-    [SerializeField] AudioClip _Coin;
-    [SerializeField] AudioClip _Dead;
+    [SerializeField] AudioClip _Coin,_Dead;
     [SerializeField] Rigidbody RB;
     [SerializeField]int _Sound;
 #endregion
@@ -30,7 +28,7 @@ public class Enemy_new: MonoBehaviour{
       }
     }
     void Awake(){
-        IsDead=false;
+        //IsDead=false;
         SearchManagers();
         }
       
@@ -48,15 +46,10 @@ public class Enemy_new: MonoBehaviour{
 		if (other.tag == TagPlayer&&IsCoin==false){
       FXManager.SoundPlay(_Coin, _Sound);
             //GameManager.Hearts-=100;
-             StartCoroutine(VidaEnemy());
+            StartCoroutine(VidaEnemy());
             GameManager.Points-=(Value/2);
 	   }
-      if (IsCoin==true && other.tag == TagPlayer){
-        if(IsDead==false){
-        Is_dead();
-        }
-      }
-       if(other.tag == "espada"){
+       if(other.tag == tagEspada&&IsDead==false){
          Is_dead();
         }       
   }

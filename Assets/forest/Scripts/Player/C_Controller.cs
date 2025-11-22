@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class C_Controller : MonoBehaviour{
     
@@ -24,9 +25,9 @@ public class C_Controller : MonoBehaviour{
         gameManager=FindObjectOfType<GameManager>();
     }
     void Update(){
-        Axis_Horizontal=Input.GetAxis(Horizontal);
-        Axis_Vertical=Input.GetAxis(Vertical);
-        Attake = Input.GetButton(Button_Attake);
+        Axis_Horizontal=CrossPlatformInputManager.GetAxisRaw(Horizontal);
+        Axis_Vertical=CrossPlatformInputManager.GetAxisRaw(Vertical);
+        Attake = CrossPlatformInputManager.GetButton(Button_Attake);
         
         _move=new Vector3(Axis_Vertical,0,Axis_Horizontal);
         Cursor.visible = CursorIsvisble;

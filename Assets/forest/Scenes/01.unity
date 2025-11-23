@@ -17801,21 +17801,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1194159853}
-    - target: {fileID: 655370392741912114, guid: f3fbead506f9a68419965427c6848e09, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1049268160492031896, guid: f3fbead506f9a68419965427c6848e09, type: 3}
       propertyPath: m_Name
       value: MobileDobleStickControl
-      objectReference: {fileID: 0}
-    - target: {fileID: 1049268160492031898, guid: f3fbead506f9a68419965427c6848e09, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1049268160492031900, guid: f3fbead506f9a68419965427c6848e09, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1049268160505906488, guid: f3fbead506f9a68419965427c6848e09, type: 3}
       propertyPath: m_Pivot.x
@@ -17899,14 +17887,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1049268160505906488, guid: f3fbead506f9a68419965427c6848e09, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2606506866414981622, guid: f3fbead506f9a68419965427c6848e09, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4225382135580747213, guid: f3fbead506f9a68419965427c6848e09, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
